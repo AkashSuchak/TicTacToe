@@ -48,25 +48,30 @@ public class TicTacToe {
         System.out.println("-----------");
     }
 
-    //Checkin Desired Location is available or not
-    public static void desiredLocation(){
-        System.out.println("Select Number from 1 to 9 to check Availability");
-        Scanner scanner = new Scanner(System.in);
-
-        //User Input for location availability
-        int location = scanner.nextInt();
-
+    //Checking Desired Location is available or not
+    public static char desiredLocation(){
         //Value of Board taking from initializeBoard Method
         char board[] = initializeBoard();
 
-        //Checking Desired Location is Valid or Not
-        if(location <= 9 && location >= 1){
-            //Checking Location is Occupied or Not
-            if (board[location] == ' ') {
-                System.out.println("Your Desired Location is Available");
-            } else {
-                System.out.println("Your Desired Location is Not Available");
-            }
+        //loop will continue till right input
+        while (true) {
+            System.out.println("Select Number from 1 to 9 to check Availability");
+            Scanner scanner = new Scanner(System.in);
+
+            //User Input for location availability
+            int location = scanner.nextInt();
+
+            //Checking Desired Location is Valid or Not
+            if (location <= 9 && location >= 1) {
+                //Checking Location is Occupied or Not
+                if (board[location] == ' ') {
+                    System.out.println("Your Desired Location "+ location + " is Available");
+                    return board[location];
+                } else {
+                    System.out.println("Your Desired Location "+ location + " is Not Available");
+                    return board[location];
+                }
+            } else System.out.println("Wrong Input !!!  Try Again");
         }
     }
 
