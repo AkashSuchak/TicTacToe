@@ -47,11 +47,36 @@ public class TicTacToe {
         System.out.println(board[7] + " | " + board[8] + " | " + board[9] );
         System.out.println("-----------");
     }
+
+    //Checkin Desired Location is available or not
+    public static void desiredLocation(){
+        System.out.println("Select Number from 1 to 9 to check Availability");
+        Scanner scanner = new Scanner(System.in);
+
+        //User Input for location availability
+        int location = scanner.nextInt();
+
+        //Value of Board taking from initializeBoard Method
+        char board[] = initializeBoard();
+
+        //Checking Desired Location is Valid or Not
+        if(location <= 9 && location >= 1){
+            //Checking Location is Occupied or Not
+            if (board[location] == ' ') {
+                System.out.println("Your Desired Location is Available");
+            } else {
+                System.out.println("Your Desired Location is Not Available");
+            }
+        }
+    }
+
     // Main method
     public static void main(String args[]){
-        //Calling Method
+        //Calling Methods
         char[] board = initializeBoard();
-        displayBoard();
         char[] symbol = userSymbol();
+        displayBoard();
+        desiredLocation();
+
     }
 }
