@@ -36,11 +36,22 @@ public class TicTacToe {
             } else System.out.println("Wrong Input!!! Try Again");
         }
     }
-    
+    // Displaying Board
+    public static void displayBoard(){
+        char[] board = initializeBoard();
+        System.out.println("-----------");
+        System.out.println(board[1] + " | " + board[2] + " | " + board[3] );
+        System.out.println("-----------");
+        System.out.println(board[4] + " | " + board[5] + " | " + board[6] );
+        System.out.println("-----------");
+        System.out.println(board[7] + " | " + board[8] + " | " + board[9] );
+        System.out.println("-----------");
+    }
     // Main method
     public static void main(String args[]){
         //Calling Method
         char[] board = initializeBoard();
+        displayBoard();
         char[] symbol = userSymbol();
     }
 }
